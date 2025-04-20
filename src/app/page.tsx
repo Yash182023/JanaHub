@@ -44,22 +44,28 @@ interface LegalResource {
     publishedAt: string;
 }
 
+// Type for category keys used in activeTab state
 type Category = 'helplines' | 'ngos' | 'legalResources';
 
-const getSimpleRichText = (field: StrapiRichTextBlock[] | string | null | undefined): string => { // Add specific type
-    if (!field) return '';
-    if (typeof field === 'string') return field;
+// --- Basic Helper to Extract Plain Text from Strapi Rich Text/Text fields ---
+// Consider using a library like @strapi/blocks-react-renderer for proper HTML rendering if needed.
+const getSimpleRichText = (field: any): string => {
+    if (!field) return ''; // Handle null or undefined input
+    if (typeof field === 'string') return field; // Return if it's already a string
     if (Array.isArray(field)) {
+        // Attempt to extract text from Strapi's default rich text block structure
         return field
             .map(block => {
                 if (block.type === 'paragraph' && Array.isArray(block.children)) {
-                    return block.children.map((child: { type: string; text: string }) => child.text || '').join(''); // Add type for child
+                    return block.children.map((child: any) => child.text || '').join('');
                 }
+                // Add handlers for other block types (lists, headings) if needed
                 return '';
             })
-            .join('\n').trim();
+            .join('\n') // Join paragraphs with newline for basic structure
+            .trim();
     }
-    return '';
+    return ''; // Fallback for unknown structures
 };
 
 
