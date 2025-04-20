@@ -3,22 +3,8 @@
 import { useState, useEffect } from 'react';
 import useDebounce from '@/hooks/useDebounce'; // Ensure this path is correct
 
-// --- Define Interfaces (Consider moving to a shared types file later) ---
-interface StrapiRichTextBlock { // Basic type for rich text, adjust if needed
-    type: string;
-    children: { type: string; text: string }[];
-}
-
-interface StrapiEntity {
-    id: number;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-}
-
-
 // --- Interfaces (Define the structure of your data from Strapi) ---
-interface Helpline extends StrapiEntity {
+interface Helpline {
     id: number;
     name: string;
     number: string;
@@ -30,7 +16,7 @@ interface Helpline extends StrapiEntity {
     publishedAt: string;
 }
 
-interface Ngo extends StrapiEntity {
+interface Ngo {
     id: number;
     name: string;
     description: any;
@@ -47,7 +33,7 @@ interface Ngo extends StrapiEntity {
     publishedAt: string;
 }
 
-interface LegalResource extends StrapiEntity {
+interface LegalResource {
     id: number;
     title: string;
     summary_of_law: any;
@@ -77,75 +63,94 @@ const getSimpleRichText = (field: StrapiRichTextBlock[] | string | null | undefi
 };
 
 
+// --- The Main Page Component ---
 export default function HomePage() {
+    // --- State Variables ---
     const [helplines, setHelplines] = useState<Helpline[]>([]);
     const [ngos, setNgos] = useState<Ngo[]>([]);
     const [legalResources, setLegalResources] = useState<LegalResource[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const [searchTerm, setSearchTerm] = useState<string>('');
-    const debouncedSearchTerm = useDebounce(searchTerm, 300);
-    const [activeTab, setActiveTab] = useState<Category>('helplines');
+    const [searchTerm, setSearchTerm] = useState<string>(''); // Live search input
+    const debouncedSearchTerm = useDebounce(searchTerm, 300); // Debounced value for filtering
+    const [activeTab, setActiveTab] = useState<Category>('helplines'); // Default visual tab
 
+    // --- Data Fetching Effect (runs once on component mount) ---
     useEffect(() => {
         async function loadData() {
-            setIsLoading(true); setError(null);
+            setIsLoading(true);
+            setError(null);
             try {
+                // Fetch all resource types from our local API route handler
                 const response = await fetch('/api/resources');
-                if (!response.ok) throw new Error(`API Error: ${response.statusText} (${response.status})`);
-                // Explicitly type the expected API response structure
-                const data: {
-                    helplines?: Helpline[];
-                    ngos?: Ngo[];
-                    legalResources?: LegalResource[];
-                    errors?: string[] | null;
-                } = await response.json();
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.statusText} (${response.status})`);
+                }
+                const data = await response.json();
 
+                // Update state with fetched data, providing empty arrays as fallbacks
                 setHelplines(data.helplines || []);
                 setNgos(data.ngos || []);
                 setLegalResources(data.legalResources || []);
 
+                // Set error state if the API route reported issues during its fetch
                 if (data.errors && data.errors.length > 0) {
-                    console.warn("Client API Errors:", data.errors);
-                    setError("Some data couldn't load.");
+                    console.warn("Client: Received errors from API route:", data.errors);
+                    setError("Some resource data might be missing or failed to load.");
                 }
-            } catch (err: unknown) { // Use 'unknown' for catch type
-                console.error("Fetch Failed:", err);
-                const message = err instanceof Error ? err.message : 'Unknown error during fetch.'; // Safely get message
-                setError(`Load error: ${message}`);
-                setHelplines([]); setNgos([]); setLegalResources([]);
-            } finally { setIsLoading(false); }
+            } catch (err: any) {
+                console.error("Client: Failed to fetch data from /api/resources:", err);
+                setError(`Failed to load resources: ${err.message}. Please try refreshing.`);
+                // Clear data on critical fetch error
+                setHelplines([]);
+                setNgos([]);
+                setLegalResources([]);
+            } finally {
+                setIsLoading(false); // Ensure loading state is turned off
+            }
         }
-        loadData();
-    }, []);
 
+        loadData();
+    }, []); // Empty dependency array ensures this runs only once on mount
+
+    // --- Filtering Logic (using the debounced search term) ---
     const lowerCaseSearchTerm = debouncedSearchTerm.toLowerCase();
 
-    // Use 'Record<string, unknown>' for item type or create a base type
-    const filterItems = <T extends Record<string, unknown>>(items: T[], fieldsToSearch: string[]): T[] => {
-        if (!lowerCaseSearchTerm) return items;
-        return items.filter(item => {
-            if (!item) return false;
-            return fieldsToSearch.some(fieldKey => {
-                 // Type assertion needed as item[fieldKey] is 'unknown' initially
-                 let fieldValue: unknown = item[fieldKey];
+    // Generic filtering function
+    const filterItems = <T extends { [key: string]: any }>(items: T[], fieldsToSearch: string[]): T[] => {
+        // If no search term, return all items immediately
+        // We want to show all items when search is empty, regardless of the active tab now
+        // if (!lowerCaseSearchTerm) return items;
 
-                if (fieldKey === 'address' && typeof item.city === 'string') { // Check 'city' exists before accessing others
+        return items.filter(item => {
+            if (!item) return false; // Skip if item is somehow null/undefined
+
+             // If search term is empty, include the item
+             if (!lowerCaseSearchTerm) return true;
+
+            // Check if the search term matches any of the specified fields
+            return fieldsToSearch.some(fieldKey => {
+                let fieldValue = item[fieldKey]; // Get the value of the current field
+
+                // Special handling for combined address field for NGOs
+                if (fieldKey === 'address' && 'city' in item) {
                     fieldValue = [item.address_line1, item.city, item.state, item.pincode].filter(Boolean).join(', ');
-                } else if (['description', 'summary_of_law', 'relevant_sections', 'procedure_for_reporting', 'services_offered'].includes(fieldKey)) {
-                    // Cast to expected type for getSimpleRichText
-                    fieldValue = getSimpleRichText(fieldValue as StrapiRichTextBlock[] | string | null | undefined);
+                }
+                // Special handling for potentially rich text fields
+                else if (['description', 'summary_of_law', 'relevant_sections', 'procedure_for_reporting', 'services_offered'].includes(fieldKey)) {
+                    fieldValue = getSimpleRichText(fieldValue);
                 }
 
+                // Perform case-insensitive search if the field value is a string
                 return typeof fieldValue === 'string' && fieldValue.toLowerCase().includes(lowerCaseSearchTerm);
             });
         });
     };
 
+    // Apply filtering to each resource type
     const filteredHelplines = filterItems(helplines, ['name', 'number', 'description', 'scope', 'languages']);
-    const filteredNgos = filterItems(ngos, ['name', 'description', 'services_offered', 'address', 'phone_number', 'email', 'website']);
+    const filteredNgos = filterItems(ngos, ['name', 'description', 'services_offered', 'address', 'phone_number', 'email', 'website']); // Added 'address' pseudo-field
     const filteredLegalResources = filterItems(legalResources, ['title', 'summary_of_law', 'relevant_sections', 'procedure_for_reporting']);
-    
 
     // --- JSX Rendering ---
     return (
