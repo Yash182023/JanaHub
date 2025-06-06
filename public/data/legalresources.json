@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "TITLE": "Protection of Women from Domestic Violence Act, 2005",
+    "SUMMARY_OF_LAW": "Provides protection to women from domestic violence, including physical, emotional, sexual, and economic abuse.",
+    "RELEVANT_SECTIONS": "Sections 2(a), 3, 4, 5, 9, 12, 18, 19, 20, 21, 22, 23",
+    "PROCEDURE_FOR_REPORTING": "A woman facing domestic violence can file a complaint with a Protection Officer or Service Provider. She can also approach the Magistrate directly for reliefs such as protection orders, residence orders, monetary relief, custody orders, and compensation orders."
+  },
+  {
+    "id": 2,
+    "TITLE": "Dowry Prohibition Act, 1961",
+    "SUMMARY_OF_LAW": "Prohibits the giving or receiving of dowry in marriage arrangements.",
+    "RELEVANT_SECTIONS": "Sections 2, 3, 4",
+    "PROCEDURE_FOR_REPORTING": "Any person can report a dowry offense to the police. The offense is cognizable, meaning the police can register a case and investigate without prior approval. Complaints can also be made to Dowry Prohibition Officers appointed by the state government."
+  },
+  {
+    "id": 3,
+    "TITLE": "Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+    "SUMMARY_OF_LAW": "Provides protection to women against sexual harassment at the workplace and establishes a mechanism for redressal of complaints.",
+    "RELEVANT_SECTIONS": "Sections 2(n), 4, 6, 9, 10, 11, 13",
+    "PROCEDURE_FOR_REPORTING": "A woman can file a complaint of sexual harassment with the Internal Complaints Committee (ICC) at her workplace within three months of the incident. If the ICC is not constituted, or if the complaint is against the employer, she can approach the Local Complaints Committee (LCC) established by the district officer."
+  },
+  {
+    "id": 4,
+    "TITLE": "Indian Penal Code, 1860 - Section 498A",
+    "SUMMARY_OF_LAW": "Addresses cruelty by a husband or his relatives towards a married woman.",
+    "RELEVANT_SECTIONS": "Section 498A",
+    "PROCEDURE_FOR_REPORTING": "A woman subjected to cruelty can file a complaint with the police. The offense is cognizable and non-bailable, allowing the police to arrest the accused without a warrant and initiate an investigation."
+  },
+  {
+    "id": 5,
+    "TITLE": "Indian Penal Code, 1860 - Section 354",
+    "SUMMARY_OF_LAW": "Deals with assault or criminal force to a woman with intent to outrage her modesty.",
+    "RELEVANT_SECTIONS": "Section 354",
+    "PROCEDURE_FOR_REPORTING": "The victim can lodge a First Information Report (FIR) at the nearest police station. The offense is cognizable, and the police are required to register the FIR and investigate the matter."
+  },
+  {
+    "id": 6,
+    "TITLE": "Indian Penal Code, 1860 - Section 375 & 376",
+    "SUMMARY_OF_LAW": "Defines the offense of rape and prescribes punishment for the same.",
+    "RELEVANT_SECTIONS": "Sections 375, 376",
+    "PROCEDURE_FOR_REPORTING": "A rape victim should immediately report the offense to the police by filing an FIR. The police are obligated to register the case, conduct an investigation, and provide necessary assistance, including medical examination."
+  },
+  {
+    "id": 7,
+    "TITLE": "Indecent Representation of Women (Prohibition) Act, 1986",
+    "SUMMARY_OF_LAW": "Prohibits indecent representation of women through advertisements or publications.",
+    "RELEVANT_SECTIONS": "Sections 3, 4",
+    "PROCEDURE_FOR_REPORTING": "Complaints regarding indecent representation can be made to the police or appropriate authorities designated under the Act. The offense is cognizable, and the police can take necessary action upon receiving the complaint."
+  },
+  {
+    "id": 8,
+    "TITLE": "Maternity Benefit Act, 1961",
+    "SUMMARY_OF_LAW": "Regulates the employment of women in certain establishments for a prescribed period before and after childbirth and provides maternity benefits.",
+    "RELEVANT_SECTIONS": "Sections 5, 6, 7, 8, 10",
+    "PROCEDURE_FOR_REPORTING": "A pregnant woman employed in an establishment covered under the Act should notify her employer in writing about her maternity leave. If denied benefits, she can approach the Inspector appointed under the Act or file a complaint with the labor court."
+  },
+  {
+    "id": 9,
+    "TITLE": "Medical Termination of Pregnancy Act, 1971",
+    "SUMMARY_OF_LAW": "Provides for the termination of certain pregnancies by registered medical practitioners.",
+    "RELEVANT_SECTIONS": "Sections 3, 4, 5",
+    "PROCEDURE_FOR_REPORTING": "A woman seeking medical termination of pregnancy can approach a registered medical practitioner at a government-approved medical facility. The procedure and conditions are specified under the Act, and the practitioner's approval is required."
+  },
+  {
+    "id": 10,
+    "TITLE": "Equal Remuneration Act, 1976",
+    "SUMMARY_OF_LAW": "Provides for the payment of equal remuneration to men and women workers for the same work or work of a similar nature.",
+    "RELEVANT_SECTIONS": "Sections 4, 5, 6",
+    "PROCEDURE_FOR_REPORTING": "A woman facing discrimination in remuneration can file a complaint with the authority appointed under the Act, typically the Labor Commissioner or an officer designated by the government. Legal recourse can also be sought in labor courts."
+  },
+  {
+    "id": 11,
+    "TITLE": "Hindu Succession Act, 1956 (Amended in 2005)",
+    "SUMMARY_OF_LAW": "Gives equal inheritance rights to daughters in Hindu joint family property.",
+    "RELEVANT_SECTIONS": "Sections 6, 8, 9, 10, 15",
+    "PROCEDURE_FOR_REPORTING": "A woman denied her rightful share in inheritance can file a suit in the civil court for partition and declaration of her rights. Legal assistance may be sought for proper representation."
+  },
+  {
+    "id": 12,
+    "TITLE": "Muslim Women (Protection of Rights on Marriage) Act, 2019",
+    "SUMMARY_OF_LAW": "Declares the practice of instant triple talaq (talaq-e-biddat) illegal and void, and prescribes punishment for the same.",
+    "RELEVANT_SECTIONS": "Sections 3, 4, 5",
+    "PROCEDURE_FOR_REPORTING": "A Muslim woman subjected to instant triple talaq can file a complaint with the police. The offense is cognizable, non-bailable, and compoundable at the instance of the married woman."
+  },
+  {
+    "id": 13,
+    "TITLE": "National Commission for Women Act, 1990",
+    "SUMMARY_OF_LAW": "Provides for the constitution of a National Commission for Women to study and monitor all matters relating to the constitutional and legal safeguards provided for women.",
+    "RELEVANT_SECTIONS": "Sections 3, 10",
+    "PROCEDURE_FOR_REPORTING": "Women can approach the National Commission for Women (NCW) to lodge complaints regarding issues affecting them. The NCW has the power to inquire into complaints and take suo-motu notice of matters relating to deprivation of women's rights."
+  },
+  {
+    "id": 14,
+    "TITLE": "Prohibition of Child Marriage Act, 2006",
+    "SUMMARY_OF_LAW": "Prohibits solemnization of child marriages and provides for matters connected therewith.",
+    "RELEVANT_SECTIONS": "Sections 3, 9, 10, 11, 12",
+    "PROCEDURE_FOR_REPORTING": "Any person with knowledge of a child marriage can report it to the Child Marriage Prohibition Officer or the police. The Act empowers courts to issue injunctions prohibiting child marriages."
+  },
+  {
+    "id": 15,
+    "TITLE": "Pre-Conception and Pre-Natal Diagnostic Techniques (Prohibition of Sex Selection) Act, 1994",
+    "SUMMARY_OF_LAW": "Prohibits sex selection before or after conception and regulates prenatal diagnostic techniques.",
+    "RELEVANT_SECTIONS": "Sections 3, 4, 5, 6",
+    "PROCEDURE_FOR_REPORTING": "Complaints regarding violations can be made to the Appropriate Authority appointed under the Act. The offense is cognizable, and the authorities can take necessary legal action."
+  },
+  {
+    "id": 16,
+    "TITLE": "Factories Act, 1948 - Provisions Relating to Women",
+    "SUMMARY_OF_LAW": "Regulates the working conditions of women in factories, including working hours, prohibition of night shifts, and provisions for crèches.",
+    "RELEVANT_SECTIONS": "Sections 19, 22, 27, 42, 43, 45, 46, 47, 48, 66",
+    "PROCEDURE_FOR_REPORTING": "A woman worker facing issues can report to the factory inspector or the labor commissioner. Complaints can also be made to the trade union representatives or women's organizations."
+  },
+  {
+    "id": 17,
+    "TITLE": "Indian Evidence Act, 1872 - Section 114A",
+    "SUMMARY_OF_LAW": "Presumption as to absence of consent in certain prosecution for rape.",
+    "RELEVANT_SECTIONS": "Section 114A",
+    "PROCEDURE_FOR_REPORTING": "In a prosecution for rape under certain circumstances, if the victim states in her evidence that she did not consent, the court shall presume that she did not consent. This aids in the legal process during the trial."
+  },
+  {
+    "id": 18,
+    "TITLE": "Criminal Law (Amendment) Act, 2013",
+    "SUMMARY_OF_LAW": "Amended various sections of the Indian Penal Code, Code of Criminal Procedure, and Indian Evidence Act to enhance protections for women against sexual offenses.",
+    "RELEVANT_SECTIONS": null,
+    "PROCEDURE_FOR_REPORTING": null
+  }
+]

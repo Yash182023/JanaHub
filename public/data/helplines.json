@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Women Helpline (All India)",
+    "number": "1091",
+    "description": "Provides immediate assistance to women in distress, addressing issues like harassment and abuse.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 2,
+    "name": "Women Helpline (Domestic Abuse)",
+    "number": "181",
+    "description": "Offers support and guidance to women facing domestic violence, including counseling and legal aid.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 3,
+    "name": "National Commission for Women (NCW)",
+    "number": "7827170170",
+    "description": "A 24x7 helpline addressing issues related to sexual violence and harassment, connecting callers with appropriate authorities.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 4,
+    "name": "Delhi Commission for Women",
+    "number": "011-23379181",
+    "description": "Provides assistance to women in Delhi facing issues like harassment, violence, and discrimination.",
+    "scope": "State-Delhi",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 5,
+    "name": "Childline India",
+    "number": "1098",
+    "description": "A 24-hour toll-free service for children in distress, offering emergency assistance and linking them to relevant services.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 6,
+    "name": "National Human Rights Commission",
+    "number": "011-23385368",
+    "description": "Addresses human rights violations, including those against women, ensuring protection and redressal.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 7,
+    "name": "Police",
+    "number": "100",
+    "description": "Emergency police assistance for any situation requiring immediate law enforcement intervention.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 8,
+    "name": "Emergency Services",
+    "number": "108",
+    "description": "Provides integrated medical, police, and fire emergency services across India.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 9,
+    "name": "Cyber Crime Helpline",
+    "number": "1930",
+    "description": "Assists individuals facing cyber threats, online harassment, and cybercrimes.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 10,
+    "name": "Shakti Shalini (NGO)",
+    "number": "011-24373737",
+    "description": "Offers shelter, support, and counseling to survivors of violence and abuse.",
+    "scope": "State-Delhi",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 11,
+    "name": "Arogyavani Health Helpline",
+    "number": "104",
+    "description": "Provides medically validated advice, health counseling services, and information about health-related schemes.",
+    "scope": "State-Karnataka",
+    "languages": "Kannada, English"
+  },
+  {
+    "id": 12,
+    "name": "Rape Crisis Cell",
+    "number": "011-23370557",
+    "description": "Offers support and legal assistance to rape survivors in Delhi.",
+    "scope": "State-Delhi",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 13,
+    "name": "Dowry Prevention Officer (North District, Delhi)",
+    "number": "011-23652304",
+    "description": "Handles complaints related to dowry harassment and provides assistance to affected women.",
+    "scope": "State-Delhi",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 14,
+    "name": "War Widows Association",
+    "number": "011-26965825",
+    "description": "Supports war widows through counseling, financial aid, and rehabilitation programs.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 15,
+    "name": "Centre for Social Research",
+    "number": "011-46131929",
+    "description": "Engages in advocacy and provides support on women's issues, including violence and discrimination.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 16,
+    "name": "Invisible Scar (Hyderabad)",
+    "number": "8008933445",
+    "description": "Offers counseling and support to survivors of domestic violence and abuse.",
+    "scope": "State-Telangana",
+    "languages": "Telugu, English"
+  },
+  {
+    "id": 17,
+    "name": "National Legal Aid Helpline",
+    "number": "15100",
+    "description": "Provides free legal assistance to women seeking justice and legal support.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  },
+  {
+    "id": 18,
+    "name": "Women Power Connect (WPC)",
+    "number": "network.wpc@gmail.com",
+    "description": "A network offering legal advice and referral support to women in need.",
+    "scope": "National",
+    "languages": "Hindi, English"
+  }
+]
