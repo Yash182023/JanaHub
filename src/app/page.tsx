@@ -676,19 +676,24 @@ export default function HomePage() {
                 </header>
 
                 {/* Search Input Section */}
+                {/* Search Input Section with Indian-inspired styling */}
                 <div className="w-full max-w-xl mx-auto mb-8">
-                    <div className="relative">
+                    <div className="relative"> {/* Ensure this div is relative */}
                         <label htmlFor="search-resources" className="sr-only">Search all resources</label>
                         <input
                             id="search-resources"
-                            type="search"
+                            type="search" // This type enables the default 'X'
                             placeholder="Search by name, location, service, law..."
-                            className="w-full px-5 py-3 border-2 border-orange-300 rounded-full shadow-sm placeholder-orange-300 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-300 transition duration-200 ease-in-out bg-white"
+                            className="w-full px-5 py-3 pr-10 border-2 border-orange-300 rounded-full shadow-sm placeholder-orange-300
+                                            focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-300
+                                            transition duration-200 ease-in-out bg-white" // Added pr-10 for padding on the right
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                            <svg className="h-5 w-5 text-orange-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" /></svg>
+                        <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none"> {/* Adjusted pr-4 */}
+                            <svg className="h-5 w-5 text-orange-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+                            </svg>
                         </div>
                     </div>
                 </div>
